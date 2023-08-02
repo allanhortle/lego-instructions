@@ -13,6 +13,10 @@ async function getSets(theme: string) {
     }>('data/sets.csv');
     return items.filter((ii) => ii.theme_id === theme);
 }
+export async function generateStaticParams() {
+    const items = await loadCSV<{theme_id: string}>('data/sets.csv');
+    return items.map((set) => ({id: set.theme_id}));
+}
 
 export default async function Theme(props: {params: {id: string}}) {
     const sets = await getSets(props.params.id);
