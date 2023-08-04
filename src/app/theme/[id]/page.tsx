@@ -48,7 +48,7 @@ export default async function Theme(props: {params: {id: string}}) {
                     <LinkList hideRoot theme={theme} depth={0} />
                 </div>
             )}
-            <div className="grid grid-cols-6 gap-3 border-spacing-1 mt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 xxl:grid-cols-8 gap-3 border-spacing-1 mt-4">
                 {sets.length === 0 && <div>This theme is empty...</div>}
                 {sets.map((ii) => {
                     const id = ii.set_num.split('-')[0];
